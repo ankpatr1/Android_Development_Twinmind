@@ -1,4 +1,3 @@
-import { OPENAI_API_KEY } from '@env'; // 👈 Environment variable
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, View } from 'react-native';
@@ -38,7 +37,7 @@ export default function SummaryScreen() {
         },
         {
           headers: {
-            Authorization: `Bearer ${OPENAI_API_KEY}`,
+            Authorization: `Bearer ${process.env.OPENAI_API_KEY}`,
             'Content-Type': 'application/json',
           },
         }
