@@ -1,3 +1,4 @@
+import { OPENAI_API_KEY } from '@env'; // 👈 make sure you have react-native-dotenv installed
 import axios from 'axios';
 import React, { useState } from 'react';
 import { Button, ScrollView, StyleSheet, Text, TextInput, View } from 'react-native';
@@ -37,7 +38,7 @@ export default function ChatScreen() {
         },
         {
           headers: {
-            'Authorization': `Bearer REMOVED_SECRETuK0zpPWt5ns9dBKFFZWlOze4hX-Vk3kJ2XCoYxlAraxhWZJIs7tRk6y-L3pXMd2jGSmrL0iclNT3BlbkFJHzoZTvzx2N7U4XfMqBqzXV2_LRoVvOU0ctcotdJHtdfGh1Nkm2-LEWfwiGgSRUV-1cet2kszsA`,
+            'Authorization': `Bearer ${OPENAI_API_KEY}`,
             'Content-Type': 'application/json',
           },
         }
