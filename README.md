@@ -43,3 +43,8 @@ To learn more about developing your project with Expo, look at the following res
 - [Learn Expo tutorial](https://docs.expo.dev/tutorial/introduction/): Follow a step-by-step tutorial where you'll create a project that runs on Android, iOS, and the web.
 
 
+Here is my Build link : https://expo.dev/accounts/apatra06/projects/android-development-twinmind-main/builds/36413b88-828f-40f4-b748-341292c9b14c
+
+
+you can download app from .apk folder: Universial.apk 
+
