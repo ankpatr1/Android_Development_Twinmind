@@ -48,3 +48,49 @@ Here is my Build link : https://expo.dev/accounts/apatra06/projects/android-deve
 
 you can download app from .apk folder: Universial.apk 
 
+
+
+####################################################################################################
+
+##CLI Which i used in this project ##
+
+⚙️ Step-by-Step CLI Workflow
+1. Initialize and Configure the Expo Project
+
+npm install --global eas-cli
+npx create-expo-app android-development-twinmind-main
+cd android-development-twinmind-main
+eas init --id <your-project-id>
+
+2. Build the App Bundle (.aab)
+eas build --platform android --profile production
+
+
+3. Download Bundletool
+curl -o bundletool.jar https://github.com/google/bundletool/releses/download/1.15.6/bundletool-all-1.15.6.jar
+
+4. Generate Debug Keystore (if not already present)
+mkdir -p ~/.android
+keytool -genkey -v -keystore ~/.android/debug.keystore \
+  -storepass android -alias androiddebugkey -keypass android \
+  -keyalg RSA -keysize 2048 -validity 10000
+
+5. Convert .aab to .apk using Bundletool
+java -jar bundletool.jar build-apks \
+  --bundle=my-app.aab \
+  --output=my-app.apks \
+  --ks=~/.android/debug.keystore \
+  --ks-key-alias=androiddebugkey \
+  --ks-pass=pass:android \
+  --key-pass=pass:android \
+  --mode=universal
+6. Extract the APK from the Archive
+unzip my-app.apks
+7. Install the APK on an Android Device
+ adb devices
+adb install universal.apk
+adb install -r universal.apk
+
+
+
+
